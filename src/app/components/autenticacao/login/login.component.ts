@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,13 +12,14 @@ export class LoginComponent {
 
   email: any;
   senha: any;
+  msgErrorLogin: any;
   
   form = new FormGroup({
     email: new FormControl('', Validators.required),
     senha: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   login() {
 
@@ -25,15 +27,14 @@ export class LoginComponent {
     this.senha = this.form.get('senha')?.value;
 
     if(this.email=='felipe@gmail.com' && this.senha=='123'){
-      console.log('USUARIO AUTORIZADO');
+      const formData: any = new FormData();
+      formData.append('email', this.email);
+      formData.append('senha', this.senha);
+      console.log(formData);
+      //formData será enviado via post para api
+      this.router.navigateByUrl('/home');
     } else {
-      console.log('ACESSO NEGADO');
+      this.msgErrorLogin = 'ACESSO NEGADO';
     }
-
-    const formData: any = new FormData();
-    formData.append('email', this.email);
-    formData.append('senha', this.senha);
-    console.log(formData);
-    //formData será enviado via post para api
   }
 }
