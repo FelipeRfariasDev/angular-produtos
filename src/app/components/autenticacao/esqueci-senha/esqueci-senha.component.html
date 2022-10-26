@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="form">
+  <div>
+    <input type="text" class="form-control" formControlName="email" placeholder="Qual é o email?">
+    <span *ngIf="!this.form.get('email')?.valid" class="form-error">campo obrigatório</span>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!this.form.valid" (click)="esqueci_senha()">Clique Aqui</button>
+  </div>
+</form>

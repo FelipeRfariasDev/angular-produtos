@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="form">
+  <div>
+    <input type="text" class="form-control" formControlName="email" placeholder="Qual é o email?">
+    <span *ngIf="!this.form.get('email')?.valid" class="form-error">campo obrigatório</span>
+  </div>
+  <div>
+    <input type="text" class="form-control" formControlName="senha" placeholder="Qual é a senha?">
+    <span *ngIf="!this.form.get('senha')?.valid" class="form-error">campo obrigatório</span>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!this.form.valid" (click)="login()">Login</button>
+  </div>
+</form>
