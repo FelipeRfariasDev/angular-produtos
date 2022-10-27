@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module'; //modulo de rotas
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //formulário
 
+import { HttpClientModule } from '@angular/common/http'; //chamada http
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
@@ -11,6 +13,7 @@ import { EsqueciSenhaComponent } from './components/autenticacao/esqueci-senha/e
 import { LogoutComponent } from './components/autenticacao/logout/logout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListarProdutosComponent } from './components/produtos/listar/listar-produtos.component';
+import { ProdutosService } from './services/produtos.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,10 @@ import { ListarProdutosComponent } from './components/produtos/listar/listar-pro
     BrowserModule,
     AppRoutingModule, //modulo de rotas
     FormsModule, //formulário
-    ReactiveFormsModule //formulário
+    ReactiveFormsModule, //formulário
+    HttpClientModule //chamada http
   ],
-  providers: [],
+  providers: [ProdutosService], //injeção de dependencia
   bootstrap: [AppComponent] //Componente que carrega na entrada
 })
 export class AppModule { }
