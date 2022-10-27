@@ -32,6 +32,7 @@ export class LoginComponent {
       formData.append('senha', this.senha);
       console.log(formData);
       //formData será enviado via post para api
+      localStorage.setItem('accessToken','wRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c');
       this.router.navigateByUrl('/home');
     } else {
       this.msgErrorLogin = 'ACESSO NEGADO';

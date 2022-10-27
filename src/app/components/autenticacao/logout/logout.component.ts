@@ -12,6 +12,7 @@ export class LogoutComponent {
   constructor(private router:Router) {}
 
   logout(){
+    localStorage.setItem('accessToken','');
     this.router.navigateByUrl('/login');
   }
 }
