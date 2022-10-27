@@ -10,6 +10,7 @@ import { LoginComponent } from './components/autenticacao/login/login.component'
 import { EsqueciSenhaComponent } from './components/autenticacao/esqueci-senha/esqueci-senha.component';
 import { LogoutComponent } from './components/autenticacao/logout/logout.component';
 import { HomeComponent } from './components/home/home.component';
+import { ListarProdutosComponent } from './components/produtos/listar/listar-produtos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home.component';
     MenuComponent,
     LoginComponent,
     EsqueciSenhaComponent,
-    LogoutComponent
+    LogoutComponent,
+    ListarProdutosComponent
   ],
   imports: [
     BrowserModule,

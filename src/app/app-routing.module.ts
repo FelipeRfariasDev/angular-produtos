@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
 import { EsqueciSenhaComponent } from './components/autenticacao/esqueci-senha/esqueci-senha.component';
 import { LogoutComponent } from './components/autenticacao/logout/logout.component';
+import { ListarProdutosComponent } from './components/produtos/listar/listar-produtos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'esqueci-senha', component: EsqueciSenhaComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'listar-produtos', component: ListarProdutosComponent },
 ];
 
 @NgModule({
