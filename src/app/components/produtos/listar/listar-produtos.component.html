@@ -1,5 +1,10 @@
 <h1>{{title}} <a href="javascript:void(0)" [routerLink]="['/adicionar-produtos']">NOVO</a></h1>
 
+<span *ngIf="exibirConfirmacaoExcluir">Tem certeza que deseja excluir?
+    <a href="javascript:void(0)" (click)="excluir()">sim</a> |
+    <a href="javascript:void(0)" (click)="exibirConfirmacaoExcluir=false">cancelar</a>
+</span>
+
 <table border="1">
     <tr>
         <td>Id</td>
@@ -13,7 +18,7 @@
         <td>{{produto['descricao']}}</td>
         <td>
             <a href="javascript:void(0)" (click)="alterar(produto)">alterar</a> |
-            <a href="javascript:void(0)">excluir</a>
+            <a href="javascript:void(0)" (click)="confirmacaoExcluir(produto)">excluir</a>
         </td>
     </tr>
 </table>

@@ -10,6 +10,7 @@ export class ListarProdutosComponent implements OnInit{
 
   title='Listar Produtos';
   listarProdutos = [];
+  exibirConfirmacaoExcluir:any = false;
 
   constructor(private produtosService: ProdutosService, private router: Router) {}
 
@@ -29,6 +30,20 @@ export class ListarProdutosComponent implements OnInit{
   alterar(produto:any){
     this.produtosService.setProdutoSelecionado(produto);
     this.router.navigate(['/alterar-produtos']);
+  }
+
+  excluir(){
+    const produtoSelecionado = this.produtosService.getProdutoSelecionado();
+    this.produtosService.delete(produtoSelecionado.id).subscribe((response: any) => {
+      this.list();
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  confirmacaoExcluir(produto:any){
+    this.produtosService.setProdutoSelecionado(produto);
+    this.exibirConfirmacaoExcluir = true;
   }
 
 }

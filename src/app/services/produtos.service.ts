@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProdutosService {
 
-
     produtoSelecionado:any | undefined;
 
     constructor(private http: HttpClient) {}
@@ -23,6 +22,10 @@ export class ProdutosService {
         return this.http.post('https://whatslista.site/projeto/api/key1/token1/cardapio/alterarItem/'+id,formProduto);
     }
 
+    delete(id:any){
+        return this.http.delete('https://whatslista.site/projeto/api/key1/token1/cardapio/excluirItem/'+id);
+    }
+
     setProdutoSelecionado(produto:any){
         this.produtoSelecionado = produto;
     }
@@ -30,5 +33,4 @@ export class ProdutosService {
     getProdutoSelecionado(){
         return this.produtoSelecionado;
     }
-
 }
