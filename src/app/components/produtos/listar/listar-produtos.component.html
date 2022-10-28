@@ -7,12 +7,12 @@
         <td>Descrição</td>
         <td></td>
     </tr>
-    <tr *ngFor="let data of listarProdutos">
-        <td>{{data['id']}}</td>
-        <td>{{data['nome']}}</td>
-        <td>{{data['descricao']}}</td>
+    <tr *ngFor="let produto of listarProdutos">
+        <td>{{produto['id']}}</td>
+        <td>{{produto['nome']}}</td>
+        <td>{{produto['descricao']}}</td>
         <td>
-            <a href="javascript:void(0)">alterar</a> |
+            <a href="javascript:void(0)" (click)="alterar(produto)">alterar</a> |
             <a href="javascript:void(0)">excluir</a>
         </td>
     </tr>

@@ -1,0 +1,17 @@
+<h1>{{title}} <a href="javascript:void(0)" [routerLink]="['/listar-produtos']">VOLTAR</a></h1>
+
+<form [formGroup]="form">
+    <div>
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" formControlName="nome">
+        <span *ngIf="!this.form.get('nome')?.valid">campo obrigatório</span>
+    </div>
+    <div>
+        <label>Descrição</label>
+        <textarea formControlName="descricao"></textarea>
+        <span *ngIf="!this.form.get('descricao')?.valid">campo obrigatório</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!this.form.valid" (click)="put()">Alterar</button>
+    </div>
+</form>

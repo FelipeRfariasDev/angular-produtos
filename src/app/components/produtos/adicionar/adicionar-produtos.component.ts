@@ -10,9 +10,6 @@ import { ProdutosService } from '../../../services/produtos.service';
 export class AdicionarProdutosComponent {
 
   title='Adicionar Produto';
-
-  nome: any;
-  descricao: any;
   
   form = new FormGroup({
     nome: new FormControl('', Validators.required),
@@ -23,12 +20,12 @@ export class AdicionarProdutosComponent {
 
   add() {
 
-    this.nome = this.form.get('nome')?.value;
-    this.descricao = this.form.get('descricao')?.value;
+    const nome:any = this.form.get('nome')?.value;
+    const descricao:any = this.form.get('descricao')?.value;
 
     const formProduto = new FormData();
-    formProduto.append('nome', this.nome);
-    formProduto.append('descricao', this.descricao);
+    formProduto.append('nome', nome);
+    formProduto.append('descricao', descricao);
 
     this.produtosService.post(formProduto).subscribe((response:any)=>{
       // tratamento se deu erro ou sucesso console.log(response);
