@@ -6,6 +6,7 @@ import { ProdutosService } from '../../../services/produtos.service';
   templateUrl: './listar-produtos.component.html'
 })
 export class ListarProdutosComponent implements OnInit{
+
   title='Listar Produtos';
   listarProdutos = [];
 

@@ -11,4 +11,8 @@ export class ProdutosService {
     getAll(){
         return this.http.get('https://whatslista.site/projeto/api/key1/token1/cardapio/consultaGeral');
     }
+
+    post(formProduto:any){
+        return this.http.post('https://whatslista.site/projeto/api/key1/token1/cardapio/adicionarItem',formProduto);
+    }
 }

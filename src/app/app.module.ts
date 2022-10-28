@@ -14,6 +14,7 @@ import { LogoutComponent } from './components/autenticacao/logout/logout.compone
 import { HomeComponent } from './components/home/home.component';
 import { ListarProdutosComponent } from './components/produtos/listar/listar-produtos.component';
 import { ProdutosService } from './services/produtos.service';
+import { AdicionarProdutosComponent } from './components/produtos/adicionar/adicionar-produtos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProdutosService } from './services/produtos.service';
     LoginComponent,
     EsqueciSenhaComponent,
     LogoutComponent,
-    ListarProdutosComponent
+    ListarProdutosComponent,
+    AdicionarProdutosComponent
   ],
   imports: [
     BrowserModule,
